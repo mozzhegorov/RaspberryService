@@ -49,7 +49,7 @@ try:
         # time.sleep(5)
 
         temperature = get_temp()
-
+        send_telegram('Я работаю')
         if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
             pinState = not pinState
             GPIO.output(control_pin, pinState)
