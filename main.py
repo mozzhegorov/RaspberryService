@@ -26,7 +26,7 @@ TF_DICT = {
 # db.bind(**DB_CONFIG)
 
 def get_temp():
-    temp_raw = check_output(["sudo /usr/bin/vcgencmd", "measure_temp"]).decode()
+    temp_raw = check_output(["/usr/bin/vcgencmd", "measure_temp"]).decode()
     temperature_now = float(findall('\d+\.\d+', temp_raw)[0])
     return temperature_now
 
