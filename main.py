@@ -49,7 +49,7 @@ try:
         # time.sleep(5)
 
         # temperature = get_temp()
-        send_telegram('Я работаю')
+        # send_telegram('Я работаю')
         # if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
         #     pinState = not pinState
         #     GPIO.output(control_pin, pinState)
@@ -57,7 +57,7 @@ try:
         #         send_telegram('Вентилятор включен, температура ' + str(temperature))
         #     else:
         #         send_telegram('Вентилятор выключен, темпертура ' + str(temperature))
-        # sleep(1)
+        sleep(1)
 except KeyboardInterrupt:
     print("Exit pressed Ctrl+C")
 except ImportError as e:
