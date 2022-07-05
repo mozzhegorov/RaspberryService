@@ -13,6 +13,7 @@ RUN pip install rpi.gpio
 RUN echo yes | apt-get install python3-rpi.gpio
 RUN pip install python-environ==0.4.54
 RUN pip install requests==2.28.1
+RUN apt-get install libraspberrypi-bin
 #RUN apk add raspberrypi
 
 COPY *.py ./
