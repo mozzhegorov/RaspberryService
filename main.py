@@ -26,7 +26,7 @@ TF_DICT = {
 # db.bind(**DB_CONFIG)
 
 def get_temp():
-    temp_raw = check_output(["vcgencmd", "measure_temp"]).decode()
+    temp_raw = check_output(["/usr/bin/vcgencmd", "measure_temp"]).decode()
     temperature_now = float(findall('\d+\.\d+', temp_raw)[0])
     return temperature_now
 
@@ -39,9 +39,9 @@ try:
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(control_pin, GPIO.OUT, initial=0)
     while True:
-        cmd = '/opt/vc/bin/vcgencmd measure_temp'
-        line = os.popen(cmd).readline().strip()[5::][:-2:]
-        _time = datetime.datetime.now()
+        # cmd = '/opt/vc/bin/vcgencmd measure_temp'
+        # line = os.popen(cmd).readline().strip()[5::][:-2:]
+        # _time = datetime.datetime.now()
 
         # write_in_db()
 
