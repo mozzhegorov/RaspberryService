@@ -32,7 +32,7 @@ def get_temp():
 
 
 try:
-    temp_on = 73
+    temp_on = 68
     control_pin = 3
     pinState = False
 
@@ -48,15 +48,14 @@ try:
         # print(f'{_time.hour:02}:{_time.minute:02}:{_time.second:02} - {line}')
         # time.sleep(5)
 
-        # temperature = get_temp()
-        # send_telegram('Я работаю')
-        # if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
-        #     pinState = not pinState
-        #     GPIO.output(control_pin, pinState)
-        #     if pinState:
-        #         send_telegram('Вентилятор включен, температура ' + str(temperature))
-        #     else:
-        #         send_telegram('Вентилятор выключен, темпертура ' + str(temperature))
+        temperature = get_temp()
+        if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
+            pinState = not pinState
+            GPIO.output(control_pin, pinState)
+            if pinState:
+                send_telegram('Вентилятор включен, температура ' + str(temperature))
+            else:
+                send_telegram('Вентилятор выключен, температура ' + str(temperature))
         sleep(1)
 except KeyboardInterrupt:
     print("Exit pressed Ctrl+C")
