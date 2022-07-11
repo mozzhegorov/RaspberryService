@@ -17,5 +17,5 @@ RUN pip install aiogram==2.21
 COPY *.py ./
 COPY *.env ./
 
-CMD [ "python", "server.py" ]
-CMD [ "python", "main.py" ]
+CMD [ "bash", "start.sh" ]
+#CMD [ "python", "main.py" ]
