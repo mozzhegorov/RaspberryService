@@ -8,7 +8,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update
 RUN pip install --upgrade pip
 RUN pip install python-environ==0.4.54
-RUN pip aiogram==2.21
+RUN pip install aiogram==2.21
 
 COPY *.py ./
 COPY *.env ./
