@@ -18,7 +18,7 @@ DATABASE = env.get_value('DATABASE')
 #     password="Abcd1234",
 # )
 DB_CONFIG = {
-        'engine': DB_ENGINE,
+        # 'engine': DB_ENGINE,
         'name': DB_NAME,
         'user': DB_USER,
         'password': DB_PASSWORD,
