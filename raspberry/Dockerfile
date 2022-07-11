@@ -16,6 +16,7 @@ RUN pip install aiogram==2.21
 
 COPY *.py ./
 COPY *.env ./
+COPY *.sh ./
 
 CMD [ "bash", "start.sh" ]
 #CMD [ "python", "main.py" ]
