@@ -20,17 +20,17 @@ class Temperature:
 
     @staticmethod
     def init_high_temp():
-        high_temp: str = db.data_base_fetchone(db.GET_HIGH_TEMP, ('1',))
+        high_temp: str = db.data_base_fetchone(db.GET_HIGH_TEMP, ('high temp',))
         print(high_temp)
         if high_temp and high_temp.isdigit():
             return float(high_temp)
         else:
-            db.data_base_action(db.UPDATE_HIGH_TEMP, ('70', '1'))
-            return 66
+            db.data_base_action(db.UPDATE_HIGH_TEMP, ('high temp', '70'))
+            return 70
 
     def update_high_temp(self, new_value: str):
         if new_value and new_value.isdigit():
             self.high_temp = float(new_value)
-            db.data_base_action(db.UPDATE_HIGH_TEMP, (self.high_temp, '1', ))
+            db.data_base_action(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp', ))
             return True
         return False

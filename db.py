@@ -47,9 +47,14 @@ GET_HIGH_TEMP = """
 """
 
 UPDATE_HIGH_TEMP = """
-    UPDATE settings 
+    UPDATE settings
     SET value=%s
     WHERE id=%s;
+"""
+
+INSERT_SETTING = """
+    INSERT INTO settings VALUES 
+    (%s, %s) ;
 """
 
 
