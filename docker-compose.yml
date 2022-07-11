@@ -4,7 +4,7 @@ services:
     build: ./raspberry
     privileged: true
     volumes:
-      - /main.py:/main.py
+      - ./raspberry/main.py:/main.py
       - /usr/bin/vcgencmd:/usr/bin/vcgencmd
       - /dev/mem:/dev/mem
       - /usr/lib/aarch64-linux-gnu/libvchiq_arm.so.0:/usr/lib/aarch64-linux-gnu/libvchiq_arm.so.0
@@ -18,7 +18,7 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - /main.py:/main.py
+      - ./telegram/main.py:/main.py
     depends_on:
       - db
     env_file:
