@@ -23,8 +23,8 @@ rasp_temp = Temperature()
 if __name__ == "__main__":
     create_tables()
     try:
-        # temp_on = rasp_temp.high_temp
-        temp_on = 68
+        temp_on = rasp_temp.high_temp
+        # temp_on = 68
         control_pin = int(CONTROL_PIN)
         pinState = False
     
