@@ -18,15 +18,14 @@ SETTINGS_EXISTS = """
     WHERE table_name='settings';
 """
 
-SETTINGS_EXISTS = """
+HISTORY_EXISTS = """
     SELECT * FROM information_schema.tables  
     WHERE table_name='history';
 """
 CREATE_SETTINGS_TABLE = """
     CREATE TABLE IF NOT EXISTS settings (
-        id VARCHAR(50),
-        value VARCHAR(50),
-        PRIMARY KEY (id)
+        id SERIAL PRIMARY KEY,
+        value VARCHAR(50)
     );
 """
 CREATE_HISTORY_TABLE = """
@@ -58,9 +57,15 @@ def create_tables():
     with dbdriver.connect(**DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(SETTINGS_EXISTS)
+        print(cursor.fetchall())
         table_exists = bool(cursor.fetchall())
         if not table_exists:
             cursor.execute(CREATE_SETTINGS_TABLE)
+        cursor.execute(HISTORY_EXISTS)
+        print(cursor.fetchall())
+        table_exists = bool(cursor.fetchall())
+        if not table_exists:
+            cursor.execute(CREATE_HISTORY_TABLE)
 
 
 def data_base_action(script, inserted_data=None):
