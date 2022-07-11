@@ -7,6 +7,7 @@ import RPi.GPIO as GPIO
 import environ
 from requesting import send_telegram
 from services import get_temp, Temperature, msg
+from db import create_tables
 
 TF_DICT = {
     True: "Включен",
@@ -20,6 +21,7 @@ CONTROL_PIN = env.get_value("CONTROL_PIN")
 rasp_temp = Temperature()
 
 if __name__ == "__main__":
+    create_tables()
     try:
         # temp_on = rasp_temp.high_temp
         temp_on = 68

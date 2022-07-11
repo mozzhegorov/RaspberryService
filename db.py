@@ -3,7 +3,25 @@ import psycopg2 as dbdriver
 
 env = environ.Env()
 environ.Env.read_env()
-DB_CONFIG = env.get_value('DB_CONFIG')
+DB_ENGINE = env.get_value('DB_ENGINE')
+DB_NAME = env.get_value('DB_NAME')
+DB_USER = env.get_value('DB_USER')
+DB_PASSWORD = env.get_value('DB_PASSWORD')
+DB_HOST = env.get_value('DB_HOST')
+DB_PORT = env.get_value('DB_PORT')
+DATABASE = env.get_value('DATABASE')
+
+DB_CONFIG = {
+    'default': {
+        'ENGINE': DB_ENGINE,
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
+    }
+}
+# DB_CONFIG = env.get_value('DB_CONFIG')
 
 SETTINGS_EXISTS = """
     SELECT * FROM information_schema.tables  
