@@ -35,4 +35,5 @@ async def new_calculation(message: types.Message):
 
 
 if __name__ == '__main__':
+    print('start polling')
     executor.start_polling(dp, skip_updates=True)

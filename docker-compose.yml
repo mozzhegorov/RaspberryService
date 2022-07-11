@@ -10,6 +10,8 @@ services:
       - /usr/lib/aarch64-linux-gnu/libvcos.so.0:/usr/lib/aarch64-linux-gnu/libvcos.so.0
     depends_on:
       - db
+    ports:
+      - "8081:8081"
     env_file:
       - ./.env.app.dev
   db:
