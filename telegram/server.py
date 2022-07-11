@@ -3,8 +3,8 @@ import logging
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ParseMode
 
-from db import create_tables
-from main import rasp_temp
+from raspberry.db import create_tables
+from raspberry.main import rasp_temp
 
 from texts import *
 import environ

@@ -30,6 +30,6 @@ class Temperature:
     def update_high_temp(self, new_value: str):
         if new_value and new_value.isdigit():
             self.high_temp = float(new_value)
-            db.data_base_action(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp', ))
+            db.data_base_action(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp',))
             return True
         return False
