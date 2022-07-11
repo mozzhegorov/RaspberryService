@@ -4,6 +4,7 @@ services:
     build: .
     ports:
       - "8000:5000"
+    privileged: true
     volumes:
       - /usr/bin/vcgencmd:/usr/bin/vcgencmd
       - /dev/mem:/dev/mem
