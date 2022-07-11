@@ -24,12 +24,12 @@ class Temperature:
         if high_temp and high_temp.isdigit():
             return float(high_temp)
         else:
-            db.data_base_fetchone(db.UPDATE_HIGH_TEMP, ('70', 'high temp', ))
+            db.data_base_action(db.UPDATE_HIGH_TEMP, ('70', 'high temp', ))
             return 70
 
     def update_high_temp(self, new_value: str):
         if new_value and new_value.isdigit():
             self.high_temp = float(new_value)
-            db.data_base_fetchone(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp', ))
+            db.data_base_action(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp', ))
             return True
         return False
