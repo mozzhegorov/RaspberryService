@@ -23,7 +23,7 @@ if __name__ == "__main__":
     try:
         # temp_on = rasp_temp.high_temp
         temp_on = 65
-        control_pin = CONTROL_PIN
+        control_pin = int(CONTROL_PIN)
         pinState = False
     
         GPIO.setmode(GPIO.BCM)
