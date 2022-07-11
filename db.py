@@ -12,14 +12,12 @@ DB_PORT = env.get_value('DB_PORT')
 DATABASE = env.get_value('DATABASE')
 
 DB_CONFIG = {
-    'default': {
         'ENGINE': DB_ENGINE,
         'NAME': DB_NAME,
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
         'HOST': DB_HOST,
         'PORT': DB_PORT,
-    }
 }
 # DB_CONFIG = env.get_value('DB_CONFIG')
 
