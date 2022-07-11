@@ -68,7 +68,7 @@ UPDATE_HIGH_TEMP = """
 
 
 def create_tables():
-    with dbdriver.connect(*DB_CONFIG) as conn:
+    with dbdriver.connect(**DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(SETTINGS_EXISTS)
         table_exists = bool(cursor.fetchall())
@@ -77,7 +77,7 @@ def create_tables():
 
 
 def data_base_action(script, inserted_data=None):
-    with dbdriver.connect(*DB_CONFIG) as conn:
+    with dbdriver.connect(**DB_CONFIG) as conn:
         cursor = conn.cursor()
         if inserted_data:
             cursor.execute(script, inserted_data)
@@ -86,14 +86,14 @@ def data_base_action(script, inserted_data=None):
 
 
 def data_base_fetch(script, inserted_data=None):
-    with dbdriver.connect(*DB_CONFIG) as conn:
+    with dbdriver.connect(**DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(script, inserted_data)
         return cursor.fetchall()
 
 
 def data_base_fetchone(script, inserted_data=None):
-    with dbdriver.connect(*DB_CONFIG) as conn:
+    with dbdriver.connect(**DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(script, inserted_data)
         return cursor.fetchone()
