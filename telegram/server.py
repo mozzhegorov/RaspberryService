@@ -2,9 +2,7 @@ import logging
 
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ParseMode
-
-from raspberry.db import create_tables
-from raspberry.main import rasp_temp
+from main import rasp_temp
 
 from texts import *
 import environ
@@ -37,5 +35,4 @@ async def new_calculation(message: types.Message):
 
 
 if __name__ == '__main__':
-    create_tables()
     executor.start_polling(dp, skip_updates=True)
