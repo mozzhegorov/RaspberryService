@@ -4,5 +4,10 @@ services:
     build: .
     ports:
       - "8000:5000"
+    volumes:
+      - /usr/bin/vcgencmd:/usr/bin/vcgencmd
+      - /dev/mem:/dev/mem
+      - /usr/lib/aarch64-linux-gnu/libvchiq_arm.so.0:/usr/lib/aarch64-linux-gnu/libvchiq_arm.so.0
+      - /usr/lib/aarch64-linux-gnu/libvcos.so.0:/usr/lib/aarch64-linux-gnu/libvcos.so.0
   redis:
     image: "redis:alpine"
