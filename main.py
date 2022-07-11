@@ -35,10 +35,10 @@ if __name__ == "__main__":
                 GPIO.output(control_pin, pinState)
                 if pinState:
                     send_telegram("Вентилятор включен, температура " + str(temperature))
-                    msg()
+                    msg('', '')
                 else:
                     send_telegram("Вентилятор выключен, температура " + str(temperature))
-                    msg()
+                    msg('', '')
             sleep(1)        
     except KeyboardInterrupt:
         print("Exit pressed Ctrl+C")
