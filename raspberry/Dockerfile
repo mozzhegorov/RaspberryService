@@ -18,5 +18,5 @@ COPY *.py ./
 COPY *.env ./
 COPY *.sh ./
 
-CMD [ "bash", "start.sh" ]
-#CMD [ "python", "main.py" ]
+#CMD [ "bash", "start.sh" ]
+CMD [ "python", "main.py" ]
