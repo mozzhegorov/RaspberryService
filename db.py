@@ -11,13 +11,19 @@ DB_HOST = env.get_value('DB_HOST')
 DB_PORT = env.get_value('DB_PORT')
 DATABASE = env.get_value('DATABASE')
 
+# conn = dbdriver.connect(
+#     host="localhost",
+#     database="suppliers",
+#     user="postgres",
+#     password="Abcd1234",
+# )
 DB_CONFIG = {
-        'ENGINE': DB_ENGINE,
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,
-        'PORT': DB_PORT,
+        'engine': DB_ENGINE,
+        'name': DB_NAME,
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'host': DB_HOST,
+        'port': DB_PORT,
 }
 # DB_CONFIG = env.get_value('DB_CONFIG')
 
@@ -62,7 +68,7 @@ UPDATE_HIGH_TEMP = """
 
 
 def create_tables():
-    with dbdriver.connect(DB_CONFIG) as conn:
+    with dbdriver.connect(*DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(SETTINGS_EXISTS)
         table_exists = bool(cursor.fetchall())
@@ -71,7 +77,7 @@ def create_tables():
 
 
 def data_base_action(script, inserted_data=None):
-    with dbdriver.connect(DB_CONFIG) as conn:
+    with dbdriver.connect(*DB_CONFIG) as conn:
         cursor = conn.cursor()
         if inserted_data:
             cursor.execute(script, inserted_data)
@@ -80,14 +86,14 @@ def data_base_action(script, inserted_data=None):
 
 
 def data_base_fetch(script, inserted_data=None):
-    with dbdriver.connect(DB_CONFIG) as conn:
+    with dbdriver.connect(*DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(script, inserted_data)
         return cursor.fetchall()
 
 
 def data_base_fetchone(script, inserted_data=None):
-    with dbdriver.connect(DB_CONFIG) as conn:
+    with dbdriver.connect(*DB_CONFIG) as conn:
         cursor = conn.cursor()
         cursor.execute(script, inserted_data)
         return cursor.fetchone()
