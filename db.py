@@ -24,8 +24,9 @@ SETTINGS_EXISTS = """
 """
 CREATE_SETTINGS_TABLE = """
     CREATE TABLE IF NOT EXISTS settings (
-        id VARCHAR(50) PRIMARY KEY,
-        value VARCHAR(50)
+        id VARCHAR(50),
+        value VARCHAR(50),
+        PRIMARY KEY (id)
     );
 """
 CREATE_HISTORY_TABLE = """
