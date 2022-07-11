@@ -25,7 +25,7 @@ class Temperature:
         if high_temp and high_temp.isdigit():
             return float(high_temp)
         else:
-            db.data_base_action(db.UPDATE_HIGH_TEMP, ('high temp', '70'))
+            db.data_base_action(db.INSERT_SETTING, ('high temp', '70'))
             return 70
 
     def update_high_temp(self, new_value: str):
