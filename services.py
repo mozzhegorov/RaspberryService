@@ -1,6 +1,6 @@
 from re import findall
 from subprocess import check_output
-import db
+# import db
 
 
 def msg(text, args):
@@ -16,20 +16,22 @@ def get_temp():
 class Temperature:
 
     def __init__(self, *args, **kwargs):
-        self.high_temp: float = self.init_high_temp()
+        # self.high_temp: float = self.init_high_temp()
+        self.high_temp: float = 65
 
     @staticmethod
     def init_high_temp():
-        high_temp: str = db.data_base_fetchone(db.GET_HIGH_TEMP, ('high temp',))
-        if high_temp.isdigit():
-            return float(high_temp)
-        else:
-            db.data_base_fetchone(db.UPDATE_HIGH_TEMP, ('70', 'high temp', ))
-            return 70
+        # high_temp: str = db.data_base_fetchone(db.GET_HIGH_TEMP, ('high temp',))
+        # if high_temp.isdigit():
+        #     return float(high_temp)
+        # else:
+        #     db.data_base_fetchone(db.UPDATE_HIGH_TEMP, ('70', 'high temp', ))
+        #     return 70
+        pass
 
     def update_high_temp(self, new_value: str):
-        if new_value.isdigit():
-            self.high_temp = float(new_value)
-            db.data_base_fetchone(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp', ))
-            return True
+        # if new_value.isdigit():
+        #     self.high_temp = float(new_value)
+        #     db.data_base_fetchone(db.UPDATE_HIGH_TEMP, (self.high_temp, 'high temp', ))
+        #     return True
         return False
