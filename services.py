@@ -21,9 +21,8 @@ class Temperature:
     @staticmethod
     def init_high_temp():
         high_temp: str = db.data_base_fetchone(db.GET_HIGH_TEMP, ('high temp',))
-        print(high_temp)
-        if high_temp and high_temp.isdigit():
-            return float(high_temp)
+        if high_temp and high_temp[0].isdigit():
+            return float(high_temp[0])
         else:
             db.data_base_action(db.INSERT_SETTING, ('high temp', '70'))
             return 70
