@@ -3,27 +3,13 @@ import psycopg2 as dbdriver
 
 env = environ.Env()
 environ.Env.read_env()
-DB_ENGINE = env.get_value('DB_ENGINE')
-DB_NAME = env.get_value('DB_NAME')
-DB_USER = env.get_value('DB_USER')
-DB_PASSWORD = env.get_value('DB_PASSWORD')
-DB_HOST = env.get_value('DB_HOST')
-DB_PORT = env.get_value('DB_PORT')
-DATABASE = env.get_value('DATABASE')
 
-# conn = dbdriver.connect(
-#     host="localhost",
-#     database="suppliers",
-#     user="postgres",
-#     password="Abcd1234",
-# )
 DB_CONFIG = {
-        # 'engine': DB_ENGINE,
-        'name': DB_NAME,
-        'user': DB_USER,
-        'password': DB_PASSWORD,
-        'host': DB_HOST,
-        'port': DB_PORT,
+        'dbname': env.get_value('DB_NAME'),
+        'user': env.get_value('DB_USER'),
+        'password': env.get_value('DB_PASSWORD'),
+        'host': env.get_value('DB_HOST'),
+        'port': env.get_value('DB_PORT'),
 }
 # DB_CONFIG = env.get_value('DB_CONFIG')
 
