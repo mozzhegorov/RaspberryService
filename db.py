@@ -28,7 +28,7 @@ CREATE_SETTINGS_TABLE = """
         value VARCHAR(50)
     );
 """
-CREATE_SETTINGS_TABLE = """
+CREATE_HISTORY_TABLE = """
     CREATE TABLE IF NOT EXISTS history (
         id SERIAL PRIMARY KEY,
         msg VARCHAR(100)
