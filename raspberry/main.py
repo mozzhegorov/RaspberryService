@@ -40,7 +40,7 @@ if __name__ == "__main__":
                 else:
                     send_telegram("Вентилятор выключен, температура " + str(temperature))
                     msg('', '')
-            sleep(1)        
+            sleep(10)
     except KeyboardInterrupt:
         print("Exit pressed Ctrl+C")
     except ImportError as e:
