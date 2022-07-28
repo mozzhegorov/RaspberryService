@@ -1,2 +1,2 @@
-exec CMD cron -f
+exec cron -f
 exec python server.py
