@@ -19,8 +19,6 @@ COPY crontab /etc/cron.d/cjob
 RUN chmod 0644 /etc/cron.d/cjob
 RUN crontab /etc/cron.d/cjob
 RUN touch /var/log/cron.log
-ENV PYTHONUNBUFFERED 1
-CMD cron -f
 COPY *.py ./
 COPY *.env ./
 COPY *.sh ./
