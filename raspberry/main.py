@@ -33,6 +33,7 @@ if __name__ == "__main__":
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(control_pin, GPIO.OUT, initial=0)
         temperature = get_temp()
+        temperature = 66
         if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
             pinState = not pinState
             GPIO.output(control_pin, pinState)
