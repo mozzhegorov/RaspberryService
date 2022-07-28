@@ -19,6 +19,7 @@ environ.Env.read_env()
 CONTROL_PIN = env.get_value("CONTROL_PIN")
 
 rasp_temp = Temperature()
+send_telegram("\ура ")
 
 if __name__ == "__main__":
     create_tables()
@@ -29,7 +30,7 @@ if __name__ == "__main__":
         temp_on = rasp_temp.high_temp
         control_pin = int(CONTROL_PIN)
         pinState = False
-    
+
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(control_pin, GPIO.OUT, initial=0)
         temperature = get_temp()
