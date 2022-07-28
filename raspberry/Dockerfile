@@ -21,7 +21,7 @@ RUN crontab /etc/cron.d/cjob
 RUN touch /var/log/cron.log
 COPY *.py ./
 COPY *.env ./
-COPY start.sh /
+COPY start.sh ./
 
 #CMD ["/start.sh"]
 #CMD ["cron", "-f"]
