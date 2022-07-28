@@ -1,1 +1,1 @@
-0/2 * * * * root python main.py >> /var/log/cron.log 2>&1
+0/2 * * * * root python main.py

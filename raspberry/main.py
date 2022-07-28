@@ -23,6 +23,8 @@ rasp_temp = Temperature()
 if __name__ == "__main__":
     create_tables()
     print("Script run")
+    send_telegram("\ура ")
+
     try:
         temp_on = rasp_temp.high_temp
         control_pin = int(CONTROL_PIN)
