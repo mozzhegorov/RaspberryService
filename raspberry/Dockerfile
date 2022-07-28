@@ -1,13 +1,14 @@
-FROM arm64v8/python:3.8-alpine
+FROM arm64v8/alpine
 
 
 ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /home
-RUN apk update
-#RUN apk add --upgrade pip
-RUN apk add rpi.gpio
+
+RUN apt-get update
+RUN pip install --upgrade pip
+RUN pip install rpi.gpio
 RUN echo yes | apt-get install python3-rpi.gpio
 RUN apt-get install -y cron
 RUN pip install python-environ==0.4.54
