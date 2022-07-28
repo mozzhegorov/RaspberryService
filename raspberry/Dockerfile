@@ -25,5 +25,5 @@ COPY *.env ./
 COPY start.sh ./
 
 #CMD ["/start.sh"]
-CMD ["/etc/init.d/cron", "start"]
+CMD ["cron", "-f"]
 #CMD [ "bash", "start.sh" ]
