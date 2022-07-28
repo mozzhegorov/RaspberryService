@@ -4,6 +4,6 @@
 #CWD="$(pwd)"
 #echo $CWD
 PATH=/usr/local/bin/
-python main.py
+/usr/local/bin/python main.py
 touch /home/test.txt
 echo "eee" > /home/test.txt
