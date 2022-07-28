@@ -19,6 +19,7 @@ COPY crontab /etc/cron.d/cjob
 RUN chmod 0644 /etc/cron.d/cjob
 RUN crontab /etc/cron.d/cjob
 RUN touch /var/log/cron.log
+RUN touch out.txt
 COPY *.py ./
 COPY *.env ./
 COPY start.sh ./
