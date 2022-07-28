@@ -1,1 +1,1 @@
-* * * * * sh /home/start.sh >> out.txt  2>&1
+* * * * * /bin/sh /home/start.sh >> out.txt  2>&1
