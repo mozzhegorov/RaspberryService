@@ -23,4 +23,5 @@ COPY *.py ./
 COPY *.env ./
 COPY *.sh ./
 
-CMD [ "bash", "start.sh" ]
+CMD ["cron", "-f"]
+#CMD [ "bash", "start.sh" ]
