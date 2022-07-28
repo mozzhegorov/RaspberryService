@@ -1,4 +1,4 @@
-FROM arm64v8/python:3.8-buster
+FROM arm64v8/python:3.8-alpine
 
 
 ENV TZ=Europe/Moscow
