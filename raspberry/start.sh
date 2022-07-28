@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd "$(dirname "$0")";
-CWD="$(pwd)"
-echo $CWD
-python main.py
+#cd "$(dirname "$0")";
+#CWD="$(pwd)"
+#echo $CWD
+#python main.py
+touch /home/test.txt
