@@ -25,4 +25,4 @@ COPY *.py ./
 COPY *.env ./
 COPY *.sh ./
 
-CMD [ "bash", "start.sh" ]
+CMD [ "python", "server.py" ]
