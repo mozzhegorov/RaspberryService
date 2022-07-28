@@ -1,5 +1,5 @@
 #!/bin/sh
 
 # start cron
-exec cron -f
-exec python server.py
+cron -f
+python server.py
