@@ -44,7 +44,7 @@ if __name__ == "__main__":
             else:
                 send_telegram("Вентилятор выключен, температура " + str(temperature))
                 msg('', '')
-        sleep(10)
+        sleep(30)
     except KeyboardInterrupt:
         print("Exit pressed Ctrl+C")
     except ImportError as e:
@@ -53,6 +53,6 @@ if __name__ == "__main__":
         traceback.print_exc(limit=2, file=sys.stdout)
         print("--- End Exception Data:")
     finally:
-        # print("CleanUp")
-        # GPIO.cleanup()
+        print("CleanUp")
+        GPIO.cleanup()
         print("End of program")
