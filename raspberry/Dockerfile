@@ -23,5 +23,6 @@ COPY *.py ./
 COPY *.env ./
 COPY *.sh ./
 
-CMD ["cron", "-f"]
+ENTRYPOINT ["cron", "-f"]
+#CMD ["cron", "-f"]
 #CMD [ "bash", "start.sh" ]
