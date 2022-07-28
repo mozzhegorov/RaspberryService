@@ -19,7 +19,6 @@ environ.Env.read_env()
 CONTROL_PIN = env.get_value("CONTROL_PIN")
 
 rasp_temp = Temperature()
-send_telegram("\ура ")
 
 if __name__ == "__main__":
     create_tables()

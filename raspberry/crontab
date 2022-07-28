@@ -1,2 +1,2 @@
-* * * * * root python main.py
+* * * * * start.sh >> out.txt  2>&1
 * * * * * root echo hello > /proc/1/fd/1 2>/proc/1/fd/2
