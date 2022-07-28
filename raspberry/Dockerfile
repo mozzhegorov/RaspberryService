@@ -5,11 +5,9 @@ ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /home
-RUN apk add
 RUN apk update
-RUN apt-get update
-RUN pip install --upgrade pip
-RUN pip install rpi.gpio
+#RUN apk add --upgrade pip
+RUN apk add rpi.gpio
 RUN echo yes | apt-get install python3-rpi.gpio
 RUN apt-get install -y cron
 RUN pip install python-environ==0.4.54
