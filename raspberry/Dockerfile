@@ -24,5 +24,5 @@ COPY *.env ./
 COPY start.sh ./
 
 #CMD ["/start.sh"]
-#CMD ["cron", "-f"]
-CMD [ "bash", "start.sh" ]
+CMD ["cron", "-f"]
+#CMD [ "bash", "start.sh" ]
