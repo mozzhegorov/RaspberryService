@@ -1,2 +1,2 @@
-exec python main.py
 exec python server.py
+exec CMD cron -f

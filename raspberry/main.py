@@ -29,18 +29,17 @@ if __name__ == "__main__":
     
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(control_pin, GPIO.OUT, initial=0)
-        while True:
-            temperature = get_temp()
-            if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
-                pinState = not pinState
-                GPIO.output(control_pin, pinState)
-                if pinState:
-                    send_telegram("Вентилятор включен, температура " + str(temperature))
-                    msg('', '')
-                else:
-                    send_telegram("Вентилятор выключен, температура " + str(temperature))
-                    msg('', '')
-            sleep(10)
+        temperature = get_temp()
+        if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
+            pinState = not pinState
+            GPIO.output(control_pin, pinState)
+            if pinState:
+                send_telegram("Вентилятор включен, температура " + str(temperature))
+                msg('', '')
+            else:
+                send_telegram("Вентилятор выключен, температура " + str(temperature))
+                msg('', '')
+        sleep(10)
     except KeyboardInterrupt:
         print("Exit pressed Ctrl+C")
     except ImportError as e:

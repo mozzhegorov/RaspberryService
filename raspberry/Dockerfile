@@ -9,14 +9,18 @@ RUN apt-get update
 RUN pip install --upgrade pip
 RUN pip install rpi.gpio
 RUN echo yes | apt-get install python3-rpi.gpio
-RUN pip install python-environ==0.4.54
+RUN pip install cron python-environ==0.4.54
 RUN pip install requests==2.28.1
 RUN pip install psycopg2==2.9.3
 RUN pip install aiogram==2.21
 
+RUN touch /var/log/cron.log
+COPY crontab /etc/cron.d/cjob
+RUN chmod 0644 /etc/cron.d/cjob
+ENV PYTHONUNBUFFERED 1
+CMD cron -f
 COPY *.py ./
 COPY *.env ./
 COPY *.sh ./
 
-#CMD [ "bash", "start.sh" ]
-CMD [ "python", "main.py" ]
+CMD [ "python", "server.py" ]
