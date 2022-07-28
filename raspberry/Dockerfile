@@ -6,6 +6,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /home
 RUN apk add
+RUN apk update
 RUN apt-get update
 RUN pip install --upgrade pip
 RUN pip install rpi.gpio
