@@ -22,10 +22,10 @@ rasp_temp = Temperature()
 
 if __name__ == "__main__":
     create_tables()
+    control_pin = int(CONTROL_PIN)
 
     try:
         temp_on = rasp_temp.high_temp
-        control_pin = int(CONTROL_PIN)
         pinState = False
 
         GPIO.setmode(GPIO.BCM)
@@ -51,6 +51,7 @@ if __name__ == "__main__":
     finally:
         print("CleanUp")
         GPIO.cleanup()
-        temperature = get_temp()
-        send_telegram("Вентилятор выключен, температура " + str(temperature))
+        if GPIO.input(control_pin):
+            temperature = get_temp()
+            send_telegram("Вентилятор выключен, температура " + str(temperature))
         print("End of program")
