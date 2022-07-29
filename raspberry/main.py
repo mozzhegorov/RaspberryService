@@ -50,8 +50,8 @@ if __name__ == "__main__":
         print("--- End Exception Data:")
     finally:
         print("CleanUp")
-        GPIO.cleanup()
         if GPIO.input(control_pin):
             temperature = get_temp()
             send_telegram("Вентилятор выключен, температура " + str(temperature))
+        GPIO.cleanup()
         print("End of program")
