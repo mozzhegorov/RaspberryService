@@ -3,9 +3,9 @@ import traceback
 from time import sleep
 import RPi.GPIO as GPIO
 import environ
-from raspberry.services.requesting import send_telegram
-from raspberry.services.services import get_rasp_temp, msg, get_high_temp
-from raspberry.services.services import db_init
+from ..services.requesting import send_telegram
+from ..services.services import get_rasp_temp, msg, get_high_temp
+from ..services.services import db_init
 
 TF_DICT = {
     True: "Включен",
@@ -17,7 +17,7 @@ environ.Env.read_env()
 CONTROL_PIN = env.get_value("CONTROL_PIN")
 
 if __name__ == "__main__":
-    create_tables()
+    db_init()
     control_pin = int(CONTROL_PIN)
 
     try:

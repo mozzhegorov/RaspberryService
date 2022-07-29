@@ -1,5 +1,5 @@
 import requests
-from raspberry.services.settings import BOT_TOKEN, CHANEL_ID
+from services.settings import BOT_TOKEN, CHANEL_ID
 
 
 def send_telegram(text):

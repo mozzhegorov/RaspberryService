@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer
 from sqlalchemy import String
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from raspberry.services.settings import (
+from services.settings import (
     DB_NAME,
     DB_PASSWORD,
     DB_HOST,
