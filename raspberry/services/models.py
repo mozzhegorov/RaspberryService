@@ -21,7 +21,7 @@ DB_CONFIG = {
 }
 # DB_CONFIG = env.get_value('DB_CONFIG')
 
-engine = create_engine(URL(**DB_CONFIG), echo=True)
+engine = create_engine(URL(**DB_CONFIG))
 # engine = create_engine("sqlite:///test.db")
 
 DeclarativeBase = declarative_base()
