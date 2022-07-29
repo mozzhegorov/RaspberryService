@@ -1,4 +1,4 @@
 * * * * * /usr/local/bin/python /home/scripts/main.py
 * * * * * /usr/local/bin/python /home/scripts/teleecho.py
 * * * * * /usr/local/bin/python /home/scripts/check_high_temp.py
-* * * * * echo "123" > test_out.txt
+* * * * * echo "123" > /home/test_out.txt
