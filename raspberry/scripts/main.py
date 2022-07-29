@@ -2,18 +2,14 @@ import sys
 import traceback
 from time import sleep
 import RPi.GPIO as GPIO
-import environ
 from services.requesting import send_telegram
 from services.services import get_rasp_temp, msg, get_high_temp, db_init
+from services.settings import CONTROL_PIN
 
 TF_DICT = {
     True: "Включен",
     False: "Отключен",
 }
-
-env = environ.Env()
-environ.Env.read_env()
-CONTROL_PIN = env.get_value("CONTROL_PIN")
 
 if __name__ == "__main__":
     db_init()
