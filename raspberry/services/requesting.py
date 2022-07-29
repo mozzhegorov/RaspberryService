@@ -8,7 +8,6 @@ def send_telegram(text):
     channel_id = CHANEL_ID
     url += token
     method = url + "/sendMessage"
-    print(token, channel_id, text, method)
 
     r = requests.post(method, data={
         "chat_id": channel_id,
