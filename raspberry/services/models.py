@@ -12,12 +12,12 @@ from services.settings import (
 )
 
 DB_CONFIG = {
-    'drivername': 'postgresql+psycopg2',
-    'host': DB_HOST,
-    'port': DB_PORT,
-    'username': DB_USER,
-    'password': DB_PASSWORD,
-    'database': DB_NAME,
+    "drivername": "postgresql+psycopg2",
+    "host": DB_HOST,
+    "port": DB_PORT,
+    "username": DB_USER,
+    "password": DB_PASSWORD,
+    "database": DB_NAME,
 }
 # DB_CONFIG = env.get_value('DB_CONFIG')
 
