@@ -17,6 +17,7 @@ RUN crontab /etc/cron.d/cjob
 COPY services ./services
 COPY scripts ./scripts
 COPY *.env ./
+COPY *.py ./
 COPY start.sh ./
 
 CMD ["bash", "start.sh"]
