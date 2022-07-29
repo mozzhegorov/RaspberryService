@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   raspberry:
+    restart: always  
     build: ./raspberry
     privileged: true
     volumes:
@@ -15,6 +16,7 @@ services:
     env_file:
       - ./.env.app.dev
   db:
+    restart: always
     image: postgres:12.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
