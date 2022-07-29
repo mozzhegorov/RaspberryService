@@ -14,7 +14,8 @@ COPY crontab /etc/cron.d/cjob
 RUN chmod 0644 /etc/cron.d/cjob
 RUN crontab /etc/cron.d/cjob
 
-COPY *.py ./
+COPY services ./services
+COPY scripts ./scripts
 COPY *.env ./
 COPY start.sh ./
 

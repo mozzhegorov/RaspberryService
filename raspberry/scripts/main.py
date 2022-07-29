@@ -1,13 +1,11 @@
-import datetime
-import os
 import sys
 import traceback
 from time import sleep
 import RPi.GPIO as GPIO
 import environ
-from requesting import send_telegram
-from services import get_temp, Temperature, msg
-from db import create_tables
+from raspberry.services.requesting import send_telegram
+from raspberry.services.services import get_rasp_temp, msg, get_high_temp
+from raspberry.services.services import db_init
 
 TF_DICT = {
     True: "Включен",
@@ -18,19 +16,17 @@ env = environ.Env()
 environ.Env.read_env()
 CONTROL_PIN = env.get_value("CONTROL_PIN")
 
-rasp_temp = Temperature()
-
 if __name__ == "__main__":
     create_tables()
     control_pin = int(CONTROL_PIN)
 
     try:
-        temp_on = rasp_temp.high_temp
+        temp_on = get_high_temp()
         pinState = False
 
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(control_pin, GPIO.OUT, initial=0)
-        temperature = get_temp()
+        temperature = get_rasp_temp()
         if temperature > temp_on and not pinState or temperature < temp_on - 10 and pinState:
             pinState = not pinState
             GPIO.output(control_pin, pinState)
@@ -51,7 +47,7 @@ if __name__ == "__main__":
     finally:
         print("CleanUp")
         if GPIO.input(control_pin):
-            temperature = get_temp()
+            temperature = get_rasp_temp()
             send_telegram("Вентилятор выключен, температура " + str(temperature))
         GPIO.cleanup()
         print("End of program")

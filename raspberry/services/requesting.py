@@ -1,10 +1,5 @@
 import requests
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
-BOT_TOKEN = env.get_value('BOT_TOKEN')
-CHANEL_ID = env.get_value('CHANEL_ID')
+from raspberry.services.settings import BOT_TOKEN, CHANEL_ID
 
 
 def send_telegram(text):
@@ -22,8 +17,3 @@ def send_telegram(text):
     if r.status_code != 200:
         print(r)
         raise Exception("post_text error")
-
-
-if __name__ == '__main__':
-    print(BOT_TOKEN, CHANEL_ID)
-    send_telegram('test')

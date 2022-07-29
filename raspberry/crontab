@@ -1,2 +1,3 @@
-* * * * * /usr/local/bin/python /home/main.py
-0 * * * * /usr/local/bin/python /home/teleecho.py
+* * * * * /usr/local/bin/python /home/scripts/main.py
+* * * * * /usr/local/bin/python /home/scripts/teleecho.py
+* * * * * /usr/local/bin/python /home/scripts/check_high_temp.py

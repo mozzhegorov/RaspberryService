@@ -2,9 +2,9 @@ import logging
 
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ParseMode
-from main import rasp_temp
+from raspberry.scripts.main import rasp_temp
 
-from texts import *
+from telegram.texts import *
 import environ
 
 env = environ.Env()
