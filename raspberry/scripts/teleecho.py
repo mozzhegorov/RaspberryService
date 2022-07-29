@@ -1,4 +1,4 @@
-from services.requesting import send_telegram
+from ..services.requesting import send_telegram
 
 
 if __name__ == "__main__":
