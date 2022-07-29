@@ -17,3 +17,7 @@ def send_telegram(text):
     if r.status_code != 200:
         print(r)
         raise Exception("post_text error")
+
+
+def prii():
+    print("123")
