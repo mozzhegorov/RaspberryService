@@ -1,2 +1,2 @@
 * * * * * /bin/sh /home/start.sh >> out.txt  2>&1
-0 * * * * /usr/local/bin/python /home/teleecho.py
+* * * * * /usr/local/bin/python /home/teleecho.py
