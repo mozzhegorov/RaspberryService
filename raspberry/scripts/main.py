@@ -3,9 +3,9 @@ import traceback
 from time import sleep
 import RPi.GPIO as GPIO
 import environ
-from ..services.requesting import send_telegram
-from ..services.services import get_rasp_temp, msg, get_high_temp
-from ..services.services import db_init
+from services.requesting import send_telegram
+from services.services import get_rasp_temp, msg, get_high_temp
+from services.services import db_init
 
 TF_DICT = {
     True: "Включен",
