@@ -22,7 +22,8 @@ def get_rasp_temp():
 
 def get_high_temp():
     session = open_session()
-    high_temp = session.query(models.Setting).where(models.Setting.name == "high temp").one()
+    high_temp = session.query(models.Setting).\
+        where(models.Setting.name == "high temp").nor_or_none()
     if high_temp:
         return int(high_temp)
     else:
