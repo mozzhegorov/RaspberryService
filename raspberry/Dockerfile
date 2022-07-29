@@ -10,11 +10,9 @@ RUN pip install --upgrade pip & apt-get install -y cron & echo yes | apt-get ins
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-COPY crontab /etc/cron.d/cjob
-RUN chmod 0644 /etc/cron.d/cjob
-RUN crontab /etc/cron.d/cjob
-RUN touch /var/log/cron.log
-RUN touch out.txt
+COPY crontab /etc/cron.d/cronjob
+RUN chmod 0644 /etc/cron.d/cronjob
+RUN crontab /etc/cron.d/cronjob
 
 COPY *.py ./
 COPY *.env ./
