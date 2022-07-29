@@ -14,6 +14,7 @@ def send_telegram(text):
         "chat_id": channel_id,
         "text": text
     })
+    print(r)
 
     if r.status_code != 200:
         print(r)
