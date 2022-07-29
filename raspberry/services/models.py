@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer
 from sqlalchemy import String
 from sqlalchemy import create_engine
+from sqlalchemy.engine import URL
 from sqlalchemy.ext.declarative import declarative_base
 from services.settings import (
     DB_NAME,
@@ -19,8 +20,8 @@ DB_CONFIG = {
 }
 # DB_CONFIG = env.get_value('DB_CONFIG')
 
-# engine = create_engine(URL(**DATABASE), echo=True)
-engine = create_engine("sqlite:///test.db")
+engine = create_engine(URL(**DB_CONFIG), echo=True)
+# engine = create_engine("sqlite:///test.db")
 
 DeclarativeBase = declarative_base()
 
