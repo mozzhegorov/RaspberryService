@@ -1,12 +1,12 @@
-import environ
+import configparser
 
-env = environ.Env()
-environ.Env.read_env()
+config = configparser.ConfigParser()
+config.read('.env')
 
-BOT_TOKEN = env.get_value('BOT_TOKEN')
-CHANEL_ID = env.get_value('CHANEL_ID')
-DB_NAME = env.get_value('DB_NAME'),
-DB_USER = env.get_value('DB_USER'),
-DB_PASSWORD = env.get_value('DB_PASSWORD'),
-DB_HOST = env.get_value('DB_HOST'),
-DB_PORT = env.get_value('DB_PORT'),
+BOT_TOKEN = config['BOT_TOKEN']
+CHANEL_ID = config['CHANEL_ID']
+DB_NAME = config['DB_NAME']
+DB_USER = config['DB_USER'],
+DB_PASSWORD = config['DB_PASSWORD']
+DB_HOST = config['DB_HOST']
+DB_PORT = config['DB_PORT']
