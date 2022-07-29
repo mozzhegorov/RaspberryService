@@ -1,5 +1,5 @@
-from ..services.services import get_rasp_temp
-from ..services.requesting import send_telegram
+from services.services import get_rasp_temp
+from services.requesting import send_telegram
 
 if __name__ == "__main__":
     rasp_temp = get_rasp_temp()
