@@ -2,6 +2,9 @@ import sys
 import traceback
 from time import sleep
 import RPi.GPIO as GPIO
+from sqlalchemy.engine.url import URL
+
+from services.models import DB_CONFIG
 from services.requesting import send_telegram
 from services.services import get_rasp_temp, msg, get_high_temp, db_init
 from services.settings import CONTROL_PIN
@@ -13,6 +16,7 @@ TF_DICT = {
 
 if __name__ == "__main__":
     db_init()
+    print(URL(**DB_CONFIG), **DB_CONFIG)
     control_pin = int(CONTROL_PIN)
 
     try:
