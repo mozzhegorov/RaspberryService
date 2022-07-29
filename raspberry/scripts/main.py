@@ -15,8 +15,8 @@ TF_DICT = {
 }
 
 if __name__ == "__main__":
-    db_init()
     print(URL(**DB_CONFIG), **DB_CONFIG)
+    db_init()
     control_pin = int(CONTROL_PIN)
 
     try:
