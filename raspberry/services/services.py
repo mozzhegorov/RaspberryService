@@ -25,7 +25,7 @@ def get_high_temp():
     high_temp = session.query(models.Setting).\
         where(models.Setting.name == "high temp").one_or_none()
     if high_temp:
-        return int(high_temp)
+        return int(high_temp.value)
     else:
         return None
 
