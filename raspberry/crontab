@@ -1,2 +1,2 @@
 * * * * * PATH=/usr/local/bin/ /bin/sh /home/start.sh >> out.txt  2>&1
-* * * * * python /home/teleecho.py
+* * * * * /usr/local/bin/python /home/teleecho.py
