@@ -5,7 +5,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /home
 RUN apt-get update
-RUN pip install --upgrade pip & apt-get install -y cron & echo yes | apt-get install python3-rpi.gpio
+RUN pip install --upgrade pip && apt-get install -y cron && echo yes | apt-get install python3-rpi.gpio
 
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
