@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer
 from sqlalchemy import String
 from sqlalchemy import create_engine
-from sqlalchemy.engine import URL
+from sqlalchemy.engine.url import URL
 from sqlalchemy.ext.declarative import declarative_base
 from services.settings import (
     DB_NAME,
