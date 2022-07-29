@@ -25,9 +25,7 @@ if __name__ == "__main__":
 
     try:
         temp_on = rasp_temp.high_temp
-        temp_on = 66
         control_pin = int(CONTROL_PIN)
-        control_pin = 3
         pinState = False
 
         GPIO.setmode(GPIO.BCM)
@@ -53,4 +51,6 @@ if __name__ == "__main__":
     finally:
         print("CleanUp")
         GPIO.cleanup()
+        temperature = get_temp()
+        send_telegram("Вентилятор выключен, температура " + str(temperature))
         print("End of program")
