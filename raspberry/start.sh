@@ -4,5 +4,5 @@
 #CWD="$(pwd)"
 #echo $CWD
 printenv | grep -v "no_proxy" >> /etc/environment
-/usr/local/bin/python /home/setup.py
+/usr/local/bin/python /home/setup.py install
 cron -f
