@@ -16,10 +16,10 @@ RUN pip install -r requirements.txt
 COPY crontab /etc/cron.d/cjob
 RUN chmod 0644 /etc/cron.d/cjob
 RUN crontab /etc/cron.d/cjob
+RUN touch /var/log/cron.log
+RUN touch out.txt
 COPY *.py ./
 COPY *.env ./
 COPY start.sh ./
 
 CMD ["bash", "start.sh"]
-#CMD ["cron", "-f"]
-#CMD [ "bash", "start.sh" ]
