@@ -1,2 +1,2 @@
 * * * * * /usr/local/bin/python /home/main.py
-* * * * * /usr/local/bin/python /home/teleecho.py
+0 * * * * /usr/local/bin/python /home/teleecho.py
