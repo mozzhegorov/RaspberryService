@@ -1,4 +1,4 @@
-* * * * * /usr/local/bin/python /home/scripts/main.py
+* * * * * /usr/local/bin/python /home/scripts/main.py >> main_log.txt
 * * * * * /usr/local/bin/python /home/scripts/teleecho.py
-* * * * * /usr/local/bin/python /home/scripts/check_high_temp.py
+* * * * * /usr/local/bin/python /home/scripts/check_high_temp.py >> check_temp_log.txt
 * * * * * echo "123" > /home/test_out.txt
