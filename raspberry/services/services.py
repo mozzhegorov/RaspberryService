@@ -1,7 +1,7 @@
 from re import findall
 from subprocess import check_output
 from sqlalchemy.orm import sessionmaker
-import models
+import services.models as models
 
 
 def open_session():
