@@ -9,7 +9,7 @@ services:
       - /dev/mem:/dev/mem
       - /usr/lib/aarch64-linux-gnu/libvchiq_arm.so.0:/usr/lib/aarch64-linux-gnu/libvchiq_arm.so.0
       - /usr/lib/aarch64-linux-gnu/libvcos.so.0:/usr/lib/aarch64-linux-gnu/libvcos.so.0
-      - /sbin/shutdown:/sbin/shutdown
+      - /sbin/reboot:/sbin/reboot
     depends_on:
       - db
     ports:

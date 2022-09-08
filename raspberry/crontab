@@ -1,5 +1,5 @@
 * * * * * /usr/local/bin/python /home/scripts/main.py
 0 * * * * /usr/local/bin/python /home/scripts/teleecho.py
 * * * * * /usr/local/bin/python /home/scripts/check_high_temp.py
-*/5 * * * * /sbin/shutdown -r now
+*/5 * * * * /sbin/reboot -r now
 @reboot /usr/local/bin/python /home/scripts/startecho.py
