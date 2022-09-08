@@ -1,4 +1,4 @@
 * * * * * /usr/local/bin/python /home/scripts/main.py
 0 * * * * /usr/local/bin/python /home/scripts/teleecho.py
 * * * * * /usr/local/bin/python /home/scripts/check_high_temp.py
-*/20 * * * * /sbin/shutdown -r now
+*/30 * * * * /sbin/shutdown -r now

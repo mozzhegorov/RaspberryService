@@ -17,6 +17,7 @@ TF_DICT = {
 if __name__ == "__main__":
     print(DB_CONFIG)
     print(URL(**DB_CONFIG))
+    send_telegram("Система контроля RaspberryPi запущена")
     db_init()
     control_pin = int(CONTROL_PIN)
 
